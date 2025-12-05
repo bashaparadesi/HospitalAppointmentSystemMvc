@@ -1,0 +1,24 @@
+﻿@model HospitalAppointmentSystemMvc.Models.Appointment
+@{
+    ViewBag.Title = "Book Appointment";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2 class="text-primary mb-4"><i class="bi bi-calendar-plus"></i> Book Appointment</h2>
+<p class="text-muted">Select your preferred date and time for your consultation.</p>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(m => m.DoctorID)
+
+    <div class="card p-4 shadow-sm">
+        <div class="mb-3"><label>Date</label><input type="date" name="AppointmentDate" class="form-control" required /></div>
+        <div class="mb-3"><label>Time</label><input type="time" name="AppointmentTime" class="form-control" required /></div>
+        <button type="submit" class="btn btn-success w-100"><i class="bi bi-check-circle"></i> Confirm Booking</button>
+    </div>
+}
+
+<div class="text-center mt-3">
+    <a href="@Url.Action("MyAppointments", "Appointment")" class="btn btn-outline-primary"><i class="bi bi-list-ul"></i> View My Appointments</a>
+</div>
