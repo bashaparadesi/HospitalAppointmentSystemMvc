@@ -102,3 +102,11 @@ Date & Time
 Status
 
 Print / Download option
+
+📸 Screens (UI Overview)
+
+Home Page - List of Doctors
+Book Appointment Form
+My Appointments List
+Appointment Slip Viewer
+Patient Login / Register
